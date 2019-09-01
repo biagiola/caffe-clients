@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri|Lobster" rel="stylesheet"><!--google fonts-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- Load font awesome icons -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script><!--the app library-->
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script><!--firebase server-->
+    </head>
+<body>
+    <!-- Social media sticky bar -->
+    <div class="header">.</div>
+    <div class="icon-bar">
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+        <a href="#" class="google"><i class="fa fa-google"></i></a> 
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+    </div>
+    <!-- Main Wrapper -->
+    <div class="wrapper">
+        <h1 class="title">Cloud Cafe</h1>
+        <div class="content">
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Cafe name">
+                <input type="text" name="city" placeholder="Cafe city">
+                <button>Add Cafe</button>
+            </form>
+            <ul id="cafe-list"></ul>  
+        </div>
+    </div>
+
+    <!-- Firebase config -->
+    <script>
+        var config = {
+            apiKey: "AIzaSyB2BXnnz8XtF3QhTJVCED4vWIatyruScmc",
+            authDomain: "cafee-33577.firebaseapp.com",
+            databaseURL: "https://cafee-33577.firebaseio.com",
+            projectId: "cafee-33577",
+            storageBucket: "cafee-33577.appspot.com",
+            messagingSenderId: "577614420625",
+            appId: "1:577614420625:web:a7d72434f7e620a9"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();//reference to database to stored inside of db const
+        db.settings({ timestampsInSnapshots: true });//settings for working with snapshot in firestore
+    </script>
+    <script src="app.js"></script><!--podemos usar la const db porque lo definimos arriba-->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script><!--Jquery library-->
+</body>
+</html>

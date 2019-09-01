@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background-color: #08633d;
+    color: #08633d;
+    margin: 0px;
+    width: 100%;
+    height: 20px;
+}
+
+body {
+    background-color: #d15625;
+}
+
+h1.title {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    cursor: default;
+}
+
+.content {
+    font-family: 'Hind Siliguri', sans-serif;
+    border: 1px solid #d8d8d8;
+    border-radius: 1px;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: #d8d8d8;
+    max-width: 500px;
+    border-radius: 5px 25px 5px 5px; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px 0px 5px;
+}
+ul li {
+    margin-bottom: 12px;
+    background: #e2e2e2; 
+    border-radius: 2px; 
+    padding: 3px; 
+    
+}
+ul li:hover{
+   background: #fffbe2;
+   transition: 0.3s;
+}
+
+ul li span:nth-child(3) {
+    float: right;
+}
+ul li span:nth-child(1), ul li span:nth-child(2) {
+    cursor: pointer;
+}
+
+button, button.loginbutton {
+    
+    color:rgb(224, 224, 224);
+    border-style: none;
+    padding: 4px;
+    height: 25px;
+    transition: 0.2s;
+    background-color: #08633d;
+    cursor: pointer;
+    border: 1px solid  #c6bcbc;
+    border-radius: 1px;
+}
+button:hover, button.loginbutton:hover {
+    color: black;
+    background-color: #c6bcbc;
+    border-style: none;
+    padding: 4px;
+    height: 25px;
+    transition: 0.2s;
+    cursor: pointer;
+    border: 1px solid #08633d;
+    border-radius: 1px;
+}
+
+input{
+    font-family: 'Hind Siliguri', sans-serif;
+    border-style: none;
+    border: 1px solid #a09393;
+    padding: 5px;
+    height: 25px;
+    margin-bottom: 5px;
+    transition: 0.2s;
+}
+input:hover{
+    background-color: #fffbe2;
+    transition: 0.2s;
+}
+
+/* Sticky social navbar*/
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 10px;
+}
+
+/* Style the social media icons with color, if you want */
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+ul  li {
+    animation-play-state: paused;
+    animation-delay: 3s;
+    animation-name: example;
+    animation-duration: 1s;
+}
+
+@keyframes example {
+    from {opacity: 1;}
+    to {opacity: 0.1;}
+}
+
+
