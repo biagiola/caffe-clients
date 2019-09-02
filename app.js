@@ -9,7 +9,7 @@ function renderCafe(doc) {
     let city = document.createElement('span');
     let cross = document.createElement('span');
     
-    // add the unique id
+    // add the unique id to the li tag
     li.setAttribute('data-id', doc.id);
     
     // add the data in the span tag
@@ -28,26 +28,14 @@ function renderCafe(doc) {
     
     // add an effect to each li with jquery library
     let a = document.getElementById(doc.id);
-    $(a).hide().fadeIn(1000);
     
     // deleting data
-/*     cross.addEventListener('click', (e) => {
-        ul.li.style.animationPlayState = "running";
-    });  */
     cross.addEventListener('click', (e) => {
         e.stopPropagation;
         let id = e.target.parentElement.getAttribute('data-id'); // we get the id in the parent attribute
         db.collection('clientes').doc(id).delete();
     });
 }
-
-// getting data 
-db.collection('clientes').get().then( (snapshot) => {
-    snapshot.docs.forEach( doc => {
-        renderCafe(doc);
-        console.log(doc.data());
-    })
-})
 
 // saving data
 form.addEventListener('submit', (event) => {
@@ -61,23 +49,30 @@ form.addEventListener('submit', (event) => {
     form.city.value = '';
 })
 
-// real-time listener - update
-// onSnapshot: cada vez que haya una actualización
-/* db.collection('clientes').orderBy('ciudad').onSnapshot(snapshot => {
+// real-time listener - update; onSnapshot: cada vez que haya una actualización
+db.collection('clientes').orderBy('ciudad').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
-    console.log(changes.docs);
+    console.log('hola', changes.docs);
     changes.forEach(change => {
         // console.log(changes.doc.data());
         if(change.type == 'added'){
             renderCafe(change.doc);
         } else if (change.type == 'removed') {
-            let li = cafeList.querySelector('[id=' + change.doc.id + ']');
+            let li = cafeList.querySelector('[data-id=' + change.doc.id + ']');
             cafeList.removeChild(li);
         }
     })
-}) */
+})
 
 /*
+
+// Normal getting data - with out real time rendering
+ db.collection('clientes').get().then( (snapshot) => {
+    snapshot.docs.forEach( doc => {
+        renderCafe(doc);
+        console.log(doc.data());
+    })
+}) 
 
 // Normal way to get data from db
 db.collection('cafes').get().then( (snapshot) => {
