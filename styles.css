@@ -44,7 +44,7 @@ ul li {
 }
 ul li:hover{
    background: #fffbe2;
-   transition: 0.3s;
+   transition: 0.5s;
 }
 
 ul li span:nth-child(3) {
