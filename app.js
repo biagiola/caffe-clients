@@ -75,25 +75,42 @@ db.collection('clientes').orderBy('ciudad').onSnapshot(snapshot => {
 }) 
 
 // Normal way to get data from db
-db.collection('cafes').get().then( (snapshot) => {
+db.collection('clientes').get().then( (snapshot) => {
    snapshot.docs.forEach( doc => {
        renderCafe(doc);
    } )
 })
 
 // Order the data retrieved from the db
-db.collection('cafes').orderBy('name', 'desc').get().then( (snapshot) => {
+db.collection('clientes').orderBy('name', 'desc').get().then( (snapshot) => {
    snapshot.docs.forEach( doc => {
        renderCafe(doc);
    } )
 })
 
 // Using where to filter some data
-db.collection('cafes').where('city', '==', 'luque').get().then( (snapshot) => {
+db.collection('clientes').where('city', '==', 'luque').get().then( (snapshot) => {
    snapshot.docs.forEach( doc => {
        renderCafe(doc);
    } )
 })
+
+//- Updating data
+// overwrite just the property that we specifys
+db.collection('clientes).doc(<idElement>).update({
+    name: 'new name'
+})
+
+// overwrite everything and becouse there's no city proporty, it leave empty
+db.collection('clientes).doc(<idElement>).set({
+    name: 'new name'
+})
+    
+    // in this case is equal to update()
+    db.collection('clientes).doc(<idElement>).set({
+      name: 'new name',
+      city: 'liverpool'
+    })
 
 */
 
