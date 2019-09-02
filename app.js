@@ -77,22 +77,29 @@ form.addEventListener('submit', (event) => {
     })
 }) */
 
-//getting data - snapshot recive data from collection
 /*
-db.collection('cafes').orderBy('name', 'desc').get().then( (snapshot) => {
-   snapshot.docs.forEach( doc => {
-       renderCafe(doc);
-   } )
-})*/
-/*db.collection('cafes').get().then( (snapshot) => {
+
+// Normal way to get data from db
+db.collection('cafes').get().then( (snapshot) => {
    snapshot.docs.forEach( doc => {
        renderCafe(doc);
    } )
 })
+
+// Order the data retrieved from the db
+db.collection('cafes').orderBy('name', 'desc').get().then( (snapshot) => {
+   snapshot.docs.forEach( doc => {
+       renderCafe(doc);
+   } )
+})
+
+// Using where to filter some data
 db.collection('cafes').where('city', '==', 'luque').get().then( (snapshot) => {
    snapshot.docs.forEach( doc => {
        renderCafe(doc);
    } )
-})*/
+})
+
+*/
 
 
